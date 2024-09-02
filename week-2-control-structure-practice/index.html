@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Control structure practice</title>
+  </head>
+  <body>
+    <h1>Control structure practice</h1>
+    <script>
+      var myString = "I am really hungry for some";
+      console.log(myString);
+
+      var myUpperString = myString.toUpperCase();
+      console.log(myUpperString);
+
+      var reallyLocation = myString.search("really");
+      var specialWord = myString.substr(reallyLocation, 6);
+      specialWord = specialWord.toUpperCase();
+      var newString = myString.replace("really", specialWord);
+      console.log(newString);
+
+      var foods = ["pizza", "pretzel", "hamburger", "pasta"];
+      console.log(`${myString} ${foods[0]}`);
+
+      for (var i = 0; i < foods.length; i++) {
+        // Check if i is even
+        if (i % 2 === 0) {
+          // If even, make array element uppercase
+          console.log(`${myString} ${foods[i].toUpperCase()}`);
+        } else {
+          // Else, print normally
+          console.log(`${myString} ${foods[i]}`);
+        }
+      }
+    </script>
+  </body>
+</html>
