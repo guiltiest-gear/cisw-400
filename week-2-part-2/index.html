@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Booleans and Operators</title>
+  </head>
+  <body>
+    <h1>Testing JS Booleans</h1>
+    <script>
+      var red = true;
+      var blue = false;
+      var green;
+      var my_num = 5;
+      var other_num = 4;
+      var not_num = "5";
+      var animal = "chicken";
+      var my_value = my_num - animal;
+
+      console.log(my_value);
+
+      if (my_value) {
+        console.log("this statement is true");
+      } else {
+        console.log("this statment is false");
+      }
+
+      var colors = ["red", "blue", "green", "yellow"];
+      var selected_color = colors[3];
+      if (selected_color === "red") {
+        console.log("The color is red");
+      } else if (selected_color === "blue") {
+        console.log("The color is blue");
+      } else if (selected_color === "green") {
+        console.log("The color is green");
+      } else {
+        console.log("The color is yellow");
+      }
+
+      switch (selected_color) {
+        case "red":
+          console.log("The color is red");
+          break;
+        case "blue":
+          console.log("The color is blue");
+          break;
+        case "green":
+          console.log("The color is green");
+          break;
+        case "yellow":
+          console.log("The color is yellow");
+          break;
+        default:
+          console.log("There was an error");
+          break;
+      }
+
+      var good_mood = true;
+      var got_sleep = true;
+      if (good_mood && got_sleep) {
+        console.log("Today is a good day");
+      } else {
+        console.log("I am grumpy");
+      }
+
+      var got_breakfast = true;
+      var got_lunch = true;
+      var got_dinner = true;
+
+      if (got_breakfast || got_lunch || got_dinner) {
+        console.log("I am not starving");
+      } else {
+        console.log("STARVING!");
+      }
+    </script>
+  </body>
+</html>
