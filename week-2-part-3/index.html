@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Loop Examples</title>
+  </head>
+  <body>
+    <h1>Loop Examples</h1>
+    <script>
+      for (var i = 0; i < 10; i++) {
+        console.log(i + "\n");
+      }
+
+      var colors = ["red", "blue", "yellow", "green"];
+      for (var i = 0; i < colors.length; i++) {
+        console.log(colors[i] + "\n");
+      }
+
+      var statment = "A string can be treated line an array";
+      for (var i = 0; i < statment.length; i++) {
+        console.log(statment[i] + "\n");
+      }
+
+      var incrementor = 0;
+      var text = "";
+
+      while (incrementor < 10) {
+        text += `The incrementor has gone up to ${incrementor} \n`;
+        incrementor++;
+      }
+
+      console.log(text);
+    </script>
+    <script>
+      var i = 0;
+      var text = "";
+      while (i < 10) {
+        text += `The incrementor is ${i}, and squared it is ${i * i}\n`;
+        i++;
+      }
+      console.log(text);
+    </script>
+  </body>
+</html>
