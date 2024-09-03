@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JavaScript Basic Challenges: Challenge 7</title>
+  </head>
+  <body>
+    <h1>JavaScript Basic Challenges</h1>
+    <h2>Challenge 7</h2>
+    <script>
+      var user_number = prompt("Please input a whole number", "");
+      if (user_number < 10) {
+        console.log("You entered a number less than 10");
+        for (var i = 0; i < 10; i++) {
+          console.log(`Here is a ${i}`);
+        }
+      } else if (user_number > 9) {
+        console.log("You entered a big number");
+      } else {
+        console.log("ERROR: you didn't enter a number!");
+      }
+    </script>
+  </body>
+</html>
