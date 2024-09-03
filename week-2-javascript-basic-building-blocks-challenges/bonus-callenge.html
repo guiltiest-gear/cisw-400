@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JavaScript Basic Challenges: Bonus Challenge</title>
+  </head>
+  <body>
+    <h1>JavaScript Basic Challenges</h1>
+    <h2>Bonus Challenge</h2>
+    <script>
+      // Prompt user for a color
+      var user_color = prompt("Please input a color", "");
+      // Normalize the input
+      var lowercase_color = user_color.toLowerCase();
+
+      // Declare arrays with colors
+      const primary_colors = ["red", "blue", "yellow"];
+      const secondary_colors = ["orange", "green", "purple"];
+
+      // Find the color
+      var primary_index = primary_colors.indexOf(user_color);
+      var secondary_index = secondary_colors.indexOf(user_color);
+      if (primary_index !== -1) {
+        console.log(`You picked a primary color: ${user_color}`);
+      } else if (secondary_index !== -1) {
+        console.log(`You picked a secondary color: ${user_color}`);
+      } else {
+        console.log("ERROR: You didn't pick a color!");
+      }
+    </script>
+  </body>
+</html>
