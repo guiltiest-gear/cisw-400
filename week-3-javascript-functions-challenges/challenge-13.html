@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Challenge 13</title>
+  </head>
+  <body>
+    <h1>Challenge 13</h1>
+    <script>
+      var user_input_name = prompt("Please provide your name", "");
+      function hello(name) {
+        if (name == "" || name == null) {
+          console.log("You didn't give me a name");
+          return;
+        }
+        console.log(`Hello ${name}, and welcome!`);
+      }
+      hello(user_input_name);
+    </script>
+  </body>
+</html>
