@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JS Function & DOM Manipulation Experiment</title>
+  </head>
+  <body>
+    <h1>Did you Know?</h1>
+    <!-- This tag will contain a message, based on user input -->
+    <div class="modify"></div>
+
+    <script>
+      // Array to hold all the images
+      const image_urls = [
+        "https://i.postimg.cc/8cCNJ6rg/lebron-fail-heat-action.png",
+        "https://i.postimg.cc/KjsFn8nk/lebron-fail-ultrakill.jpg",
+        "https://i.postimg.cc/mZdbx80L/biden-blast.jpg",
+        "https://i.postimg.cc/VLdzzX8j/is-he-stupid.jpg",
+      ];
+
+      // Get a random integer, inclusive of min and max
+      function get_rand_int(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+
+      // Append to a specific tag with a specific class
+      function append_to_modify_class_tag(tag_type, class_attr, node) {
+        document.querySelector(`${tag_type}.${class_attr}`).appendChild(node);
+      }
+
+      // Create a node and associated text node
+      function create_text_node(element, node_text) {
+        const node = document.createElement(element);
+        const textnode = document.createTextNode(node_text);
+        node.appendChild(textnode);
+        return node;
+      }
+
+      // Does exactly as said
+      function insult_user() {
+        // Get a random number from 1 to 100
+        const random_num = get_rand_int(1, 100);
+        // Now prompt the user to type in the randomly selected number
+        const num_input = prompt(
+          `Input the exact number shown here: ${random_num}`,
+          "",
+        );
+        // Determine if the user actually put in the correct number or just something else entirely
+        if (!parseInt(num_input) || num_input != random_num) {
+          // User apparently cannot follow directions, insult them
+          append_to_modify_class_tag(
+            "div",
+            "modify",
+            create_text_node(
+              "p",
+              "You're not very good at following instructions apparently, based on how you got this message",
+            ),
+          );
+
+          // Now do the same thing except with a :/ as a header
+          append_to_modify_class_tag(
+            "div",
+            "modify",
+            create_text_node("h1", ":/"),
+          );
+
+          // One final message
+          append_to_modify_class_tag(
+            "div",
+            "modify",
+            create_text_node("p", "No image for you, try again next time"),
+          );
+          return true;
+        }
+        return false;
+      }
+
+      // Create an image node
+      function create_image_node(src) {
+        const node = document.createElement("img");
+        node.setAttribute("src", src);
+        return node;
+      }
+
+      // Determine if user can follow basic directions
+      if (!insult_user()) {
+        // User can read instruction, create and append friendly message
+        append_to_modify_class_tag(
+          "div",
+          "modify",
+          create_text_node(
+            "p",
+            "You can follow basic instructions! Have an image! Maybe try collecting them all?",
+          ),
+        );
+        // Append a randomly selected image
+        append_to_modify_class_tag(
+          "div",
+          "modify",
+          create_image_node(image_urls[get_rand_int(0, image_urls.length - 1)]),
+        );
+      }
+    </script>
+  </body>
+</html>
