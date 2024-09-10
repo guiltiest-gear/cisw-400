@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DOM Examples</title>
+    <style>
+      .blue {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>DOM Examples</h1>
+    <!-- <p id="one">Here is some text</p>
+    <script>
+      document.getElementById("one").style.color = "red";
+    </script> -->
+
+    <!-- <p class="blue">Here is some text</p>
+    <p>Here is some more text</p>
+    <p class="blue">Here is even more text</p> -->
+
+    <!-- <script>
+      var myText = document.getElementsByTagName("p");
+      // console.log(myText);
+      for (var i = 0; i < myText.length; i++) {
+        myText[i].style.color = "red";
+        alert(`This is element ${i}`);
+      }
+    </script> -->
+
+    <!-- <script>
+      var myText = document.getElementsByClassName("blue");
+      for (var i = 0; i < myText.length; i++) {
+        myText[i].style.color = "blue";
+      }
+    </script> -->
+
+    <!-- <div id="special">
+      <p class="cheese">Here is some text</p>
+      <p>Here is some more text</p>
+    </div> -->
+
+    <!-- <script>
+      var myText = document.querySelector("#special .cheese");
+      myText.style.fontSize = "24px";
+    </script> -->
+
+    <!-- <div id="special">
+      <p>Here is some text</p>
+      <p>Here is some more text</p>
+    </div>
+    <p>Not this paragraph!</p> -->
+
+    <!-- <script>
+      var myText = document.querySelectorAll("#special p");
+      for (var i = 0; i < myText.length; i++) {
+        myText[i].style.fontWeight = "bold";
+      }
+    </script> -->
+
+    <!-- <div id="special">
+      <p>Here is some text</p>
+      <p>Here is some more text</p>
+    </div> -->
+
+    <!-- <script>
+      var myDiv = document.getElementById("special");
+      myDiv.innerHTML = "<p>I love cheese</p>";
+    </script> -->
+
+    <!-- <script>
+      var firstPara = document.querySelector("p");
+      firstPara.className = "blue";
+    </script> -->
+
+    <!-- <form>
+      <label><input type="checkbox" />yes</label>
+    </form> -->
+
+    <!-- <script>
+      var checkBox = document.querySelector("input");
+      checkbox.setAttribute("checked", "checked");
+    </script> -->
+
+    <!-- <div>
+      <p>Here is a paragraph</p>
+    </div> -->
+
+    <!-- <script>
+      var mytag = document.createelement("p");
+      var mysentence = document.createtextnode("second paragraph");
+      mytag.appendchild(mysentence);
+      document.queryselector("div").appendchild(mytag);
+    </script> -->
+
+    <div>
+      <p>Here is a paragraph</p>
+      <p>Remove this paragraph</p>
+    </div>
+
+    <script>
+      var myDiv = document.querySelector("div");
+      myDiv.removeChild(myDiv.children[1]);
+    </script>
+  </body>
+</html>
