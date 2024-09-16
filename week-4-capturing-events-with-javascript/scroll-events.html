@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript Events</title>
+    <style>
+      div {
+        width: 50px;
+        height: 5000px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Capturing scroll events</h1>
+    <div></div>
+    <script>
+      var pageTop;
+
+      window.addEventListener("scroll", function () {
+        pageTop = window.pageYOffset || document.documentElement.scrollTop;
+        console.log(pageTop);
+      });
+    </script>
+  </body>
+</html>
