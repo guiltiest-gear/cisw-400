@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript Event Challenges: Challenge 26</title>
+  </head>
+  <body>
+    <h1>JavaScript Event Challenges: Challenge 26</h1>
+    <div>
+      <p>This is paragraph number 1</p>
+    </div>
+    <button>Add a paragraph</button>
+    <button>Remove paragraph</button>
+    <script>
+      var addbtn = document.querySelectorAll("button")[0];
+      var rmbtn = document.querySelectorAll("button")[1];
+      var divtag = document.querySelector("div");
+      var paranum = 1;
+
+      addbtn.addEventListener("click", function () {
+        paranum++;
+        const newpara = document.createElement("p");
+        const node = document.createTextNode(
+          `This is paragraph number ${paranum}`,
+        );
+        newpara.appendChild(node);
+        divtag.appendChild(newpara);
+      });
+
+      rmbtn.addEventListener("click", function () {
+        if (paranum > 1) {
+          divtag.removeChild(divtag.children[paranum - 1]);
+          paranum--;
+        } else {
+          alert("Hey! You can't delete that one!");
+        }
+      });
+    </script>
+  </body>
+</html>
