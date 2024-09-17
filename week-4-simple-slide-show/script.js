@@ -5,7 +5,7 @@ const myImages = [
   "lebron-fail-ultrakill.jpg",
 ];
 
-const imagepath = "../images/";
+const imagepath = "images/";
 var currentImage = 0;
 
 document.getElementById("next").onclick = nextPhoto;
