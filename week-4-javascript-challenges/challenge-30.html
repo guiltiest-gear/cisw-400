@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript Event Challenges: Challenge 30</title>
+    <style>
+      body {
+        height: 3000px;
+      }
+      .one {
+        background-color: beige;
+        transition: all 3s;
+      }
+      .two {
+        background-color: blueviolet;
+        transition: all 3s;
+      }
+      .three {
+        background-color: coral;
+        transition: all 3s;
+      }
+      .four {
+        background-color: cornflowerblue;
+        transition: all 3s;
+      }
+      .five {
+        background-color: darkgoldenrod;
+        transition: all 3s;
+      }
+    </style>
+  </head>
+  <body class="one">
+    <h1>JavaScript Event Challenges: Challenge 30</h1>
+    <p>Press the B key to turn the page beige</p>
+    <p>Press the V key to turn the page blueviolet</p>
+    <p>Press the C key to turn the page coral</p>
+    <p>Press the F key to turn the page cornflowerblue</p>
+    <p>Press the G key to turn the page darkgoldenrod</p>
+    <script>
+      var bodytag = document.querySelector("body");
+      function change_class(newclass) {
+        bodytag.className = newclass;
+      }
+
+      document.addEventListener("keydown", function (event) {
+        // Convert the char code to a letter
+        var whichkey = String.fromCharCode(event.which);
+
+        // Change the class based on the key pressed
+        switch (whichkey) {
+          case "B":
+            change_class("one");
+            break;
+          case "V":
+            change_class("two");
+            break;
+          case "C":
+            change_class("three");
+            break;
+          case "F":
+            change_class("four");
+            break;
+          case "G":
+            change_class("five");
+            break;
+          default:
+            alert(
+              "Hey man, those are all the colors I have, take it or leave it",
+            );
+            break;
+        }
+      });
+    </script>
+  </body>
+</html>
