@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Miles to Kilometers Converter</title>
+
+    <!--/ /-------- Normalize CSS --------/ /-->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      rel="stylesheet"
+    />
+
+    <!--/ /-------- Google Fonts --------/ /-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Oswald|PT+Sans&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--/ /-------- My Styles --------/ /-->
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <h1>Miles to Kilometers Converter</h1>
+
+    <div class="container top">
+      <p>
+        Type in a number of miles and click the button to convert the distance
+        to kilometers.
+      </p>
+
+      <form method="post" id="convert">
+        <input
+          type="text"
+          name="distance"
+          id="distance"
+          placeholder="distance"
+        />
+        <input type="submit" name="convertdist" value="Convert Distance" />
+      </form>
+    </div>
+    <div class="container bottom" id="answer">
+      <h2 class="invisible">Answer goes here</h2>
+    </div>
+
+    <script>
+      /**
+       * Check if there is a valid number in a string
+       * @param {string} str
+       * @returns {boolean}
+       */
+      function isNumeric(str) {
+        // We should only get a string, if we got something else, something
+        // must have gone wrong
+        if (typeof str != "string") return false;
+        return (
+          !isNaN(str) && // Use type coercion to make sure we get all of the string
+          !isNaN(parseFloat(str)) // Ensure whitespace strings fail
+        );
+      }
+
+      /**
+       * Convert miles to kilometers
+       * @param {number} miles
+       * @returns {string}
+       */
+      function milesToKilometers(miles) {
+        // Convert to kilometers and truncate to 3 decimal places
+        return Number.parseFloat(miles * 1.609344).toFixed(3);
+      }
+
+      // Grab the form element
+      const myForm = document.getElementById("convert");
+      myForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        // Get the data from the form
+        const formData = document.getElementById("distance").value;
+        // Regardless of state of data, remove the invisible class from the header
+        const answerHeader = document.getElementById("answer").children[0];
+        answerHeader.classList.remove("invisible");
+        if (!isNumeric(formData)) {
+          // Got bad data, show the error
+          answerHeader.innerHTML =
+            "Error! Bad data inputted! Please try again!";
+          return;
+        }
+        // Otherwise, set message normally
+        answerHeader.innerHTML = `${formData} miles converts to ${milesToKilometers(formData)} kilometers`;
+      });
+    </script>
+  </body>
+</html>
