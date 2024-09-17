@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Distance Converter</title>
+
+    <!--/ /-------- Normalize CSS --------/ /-->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      rel="stylesheet"
+    />
+
+    <!--/ /-------- Google Fonts --------/ /-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Oswald|PT+Sans&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--/ /-------- My Styles --------/ /-->
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <h1>Miles to Kilometers Converter</h1>
+
+    <div class="container top">
+      <p>
+        Type in a number of miles and click the button to convert the distance
+        to kilometers.
+      </p>
+
+      <form method="post" id="convert">
+        <input
+          type="text"
+          name="distance"
+          id="distance"
+          placeholder="distance"
+        />
+        <input type="submit" name="convertdist" value="Convert Distance" />
+      </form>
+    </div>
+    <div class="container bottom" id="answer">
+      <h2 class="invisible">Answer goes here</h2>
+    </div>
+
+    <p id="directions">
+      Press the "K" key to switch to kilometer converstion, press the "M" key to
+      switch to mile conversion
+    </p>
+
+    <script>
+      /**
+       * Check if there is a valid number in a string
+       * @param {string} str
+       * @returns {boolean}
+       */
+      function isNumeric(str) {
+        // We should only get a string, if we got something else, something
+        // must have gone wrong
+        if (typeof str != "string") return false;
+        return (
+          !isNaN(str) && // Use type coercion to make sure we get all of the string
+          !isNaN(parseFloat(str)) // Ensure whitespace strings fail
+        );
+      }
+
+      /**
+       * Convert miles to kilometers and round to three decimal places
+       * @param {number} miles
+       * @returns {string}
+       */
+      function milesToKilometers(miles) {
+        // Convert to kilometers and truncate to 3 decimal places
+        return Number.parseFloat(miles * 1.609344).toFixed(3);
+      }
+
+      /**
+       * Convert kilometers to miles and round to three decimal places
+       * @param {number} kilometers
+       * @returns {string}
+       */
+      function kilometersToMiles(kilometers) {
+        return Number.parseFloat(kilometers * 0.621371192).toFixed(3);
+      }
+
+      // Change the header based upon the state of isMilesToKilometers
+      function changeHeaders() {
+        // Grab the first h1 element
+        const topHeader = document.querySelector("h1");
+        // Grab the paragraph in the container top div
+        const subHeading =
+          document.querySelector("div.container.top").children[0];
+        if (isMilesToKilometers) {
+          topHeader.innerHTML = "Miles to Kilometers Converter";
+          subHeading.innerHTML =
+            "Type in a number of miles and click the button to convert the distance to kilometers.";
+        } else {
+          topHeader.innerHTML = "Kilometers to Miles Converter";
+          subHeading.innerHTML =
+            "Type in a number of kilometers and click the button to convert the distance to miles.";
+        }
+      }
+
+      // Default to miles to kilometers
+      var isMilesToKilometers = true;
+
+      // Listen for key press events and update accordingly
+      document.addEventListener("keydown", (event) => {
+        // Convert key code into letter
+        const whichKey = String.fromCharCode(event.which);
+        switch (whichKey) {
+          // Change to kilometers to miles
+          case "K":
+            // Update boolean
+            isMilesToKilometers = false;
+            changeHeaders();
+            break;
+          case "M":
+            // Update boolean
+            isMilesToKilometers = true;
+            changeHeaders();
+            break;
+          default:
+            // Ignore all other input
+            break;
+        }
+      });
+
+      // Grab the form element
+      const myForm = document.getElementById("convert");
+      myForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        // Get data from the form
+        const formData = document.getElementById("distance").value;
+        // Regardless of state of data, remove the invisible class from the header
+        const answerHeader = document.getElementById("answer").children[0];
+        answerHeader.classList.remove("invisible");
+        if (!isNumeric(formData)) {
+          // Got bad data, show the error
+          answerHeader.innerHTML =
+            "Error! Bad data inputted! Please try again!";
+          return;
+        }
+
+        // Figure out if we're doing miles to kilometers or vice versa
+        if (isMilesToKilometers)
+          answerHeader.innerHTML = `${formData} miles converts to ${milesToKilometers(formData)} kilometers`;
+        else
+          answerHeader.innerHTML = `${formData} kilometers converts to ${kilometersToMiles(formData)} miles`;
+      });
+    </script>
+  </body>
+</html>
