@@ -15,7 +15,6 @@ function main() {
     menuLinks[i].addEventListener("click", function (event) {
       event.preventDefault();
       const thisMenu = this.parentNode.querySelector("ul");
-      thisMenu.className = "show-menu";
       if (thisMenu.classList.contains("hide-menu")) {
         hideSubmenus();
         thisMenu.className = "show-menu";
