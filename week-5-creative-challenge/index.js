@@ -30,7 +30,7 @@ function newElements() {
 }
 
 function playAudio() {
-  let audio = new Audio("invincible.m4a");
+  let audio = new Audio("media/invincible.m4a");
   audio.play();
 }
 
