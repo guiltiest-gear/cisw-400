@@ -1,0 +1,54 @@
+body {
+  background-color: #000;
+}
+
+h1,
+h2,
+p {
+  color: white;
+  font-family: Hack, monospace;
+}
+
+button.center {
+  margin: 0 auto;
+  display: block;
+}
+
+/* Center an element */
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.fadeoutimg {
+  animation: fadeout 2s;
+}
+
+.fadeinimg {
+  animation: fadein 2s;
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
