@@ -1,16 +1,17 @@
-"use strict";
+(function () {
+  "use strict";
 
-function main() {
   const tabs = document.querySelectorAll("#tabs > ul > li > a");
-  for (let i = 0; i < tabs.length; i++) {
-    tabs[i].addEventListener("click", selectTab);
-  }
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", selectTab);
+  });
 
   function selectTab(event) {
     event.preventDefault();
-    for (let i = 0; i < tabs.length; i++) {
-      tabs[i].removeAttribute("class");
-    }
+
+    tabs.forEach((tab) => {
+      tab.removeAttribute("class");
+    });
 
     event.target.className = "active";
 
@@ -22,17 +23,15 @@ function main() {
 
     oldTabContent.addEventListener(
       "transitioned",
-      function () {
+      () => {
         oldTabContent.className = "hidden";
 
         thisContent.className = "visible visuallyhidden";
-        setTimeout(function () {
+        setTimeout(() => {
           thisContent.classList.remove("visuallyhidden");
         }, 20);
       },
       { capture: false, once: true, passive: false },
     );
   }
-}
-
-main();
+})();
