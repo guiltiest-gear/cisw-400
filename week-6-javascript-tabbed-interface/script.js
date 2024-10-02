@@ -2,6 +2,7 @@
   "use strict";
 
   const tabs = document.querySelectorAll("#tabs > ul > li > a");
+
   tabs.forEach((tab) => {
     tab.addEventListener("click", selectTab);
   });
@@ -14,13 +15,10 @@
     });
 
     event.target.className = "active";
-
     const thisTab = event.target.getAttribute("href");
     const thisContent = document.querySelector(thisTab);
-
     const oldTabContent = document.querySelector(".visible");
     oldTabContent.className = "visuallyhidden";
-
     oldTabContent.addEventListener(
       "transitioned",
       () => {
