@@ -20,6 +20,7 @@
     const oldTabContent = document.querySelector(".visible");
     oldTabContent.className = "visuallyhidden";
     oldTabContent.addEventListener(
+      // NOTE: It is *NOT* transitioned, but transition*end*
       "transitionend",
       () => {
         oldTabContent.className = "hidden";
