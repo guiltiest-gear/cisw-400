@@ -1,0 +1,20 @@
+#container {
+  max-width: 700px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: Arial;
+}
+
+.center {
+  text-align: center;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
