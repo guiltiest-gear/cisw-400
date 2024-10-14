@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML Form Elements</title>
+    <style>
+      label,
+      input {
+        display: block;
+      }
+
+      input {
+        margin-bottom: 20px;
+      }
+
+      fieldset input,
+      fieldset label {
+        display: inline;
+      }
+
+      fieldset label {
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <form method="post">
+      <label for="fname">First name</label>
+      <input type="text" name="fname" id="fname" />
+
+      <label for="lname">Last name</label>
+      <input type="text" name="lname" id="lname" />
+
+      <label for="favcolor">Favorite color</label>
+      <input type="color" name="favolor" id="favcolor" />
+
+      <label for="email">Email address</label>
+      <input type="email" name="email" id="email" required />
+
+      <fieldset>
+        <legend>Do you want spam?</legend>
+        <input type="radio" name="spam" id="spam-yes" value="yes" />
+        <label for="spam-yes">Yes, send me spam!</label>
+
+        <input type="radio" name="spam" id="spam-no" value="no" checked />
+        <label for="spam-no">No, don't send me spam!</label>
+
+        <input type="radio" name="spam" id="spam-surprise" value="no" />
+        <label for="spam-surprise">Surprise me instead!</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Favorite animals?</legend>
+        <input type="checkbox" name="animal[]" value="cat" id="cat" />
+        <label for="cat">Cat</label>
+
+        <input type="checkbox" name="animal[]" value="dog" id="dog" />
+        <label for="dog">Dog</label>
+
+        <input type="checkbox" name="animal[]" value="llama" id="llama" />
+        <label for="llama">Llama</label>
+      </fieldset>
+
+      <label for="cheese">Select favorite cheese</label>
+      <select name="cheese" id="cheese">
+        <option value="American">American</option>
+        <option value="Swiss">Swiss</option>
+        <option value="Brie">Brie</option>
+      </select>
+
+      <label for="comments">Comments?</label>
+      <textarea rows="10" cols="50" id="comments" name="comments"></textarea>
+
+      <input type="submit" name="send" value="send it!" />
+    </form>
+  </body>
+</html>
