@@ -1,0 +1,315 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kittens for Sale!</title>
+    <!-- Normalize CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gentium+Basic&family=Oswald&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Flexslider css -->
+    <link rel="stylesheet" href="flexslider.css" />
+
+    <!-- Fancybox CSS -->
+    <link href="source/jquery.fancybox.css" rel="stylesheet" />
+
+    <link href="styles.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body>
+    <div id="page">
+      <header>
+        <h1>Kittens for Sale!</h1>
+        <a href="#" id="formtoggle">Open the Kitten Acquisition Form</a>
+      </header>
+
+      <div id="formslider">
+        <div id="formcontainer">
+          <h1>Life is better with kittens! Get some today!</h1>
+          <form action="index.html" method="post" id="kittenform">
+            <div class="column">
+              <label for="name">Name</label>
+              <input type="text" name="name" id="name" />
+
+              <label for="email">Email</label>
+              <input type="text" name="email" id="email" />
+
+              <label for="phone">Phone</label>
+              <input type="text" name="phone" id="phone" />
+
+              <label for="street">Street Address</label>
+              <input type="text" name="street" id="street" />
+
+              <label for="city">City</label>
+              <input type="text" name="city" id="city" />
+
+              <label for="state">State</label>
+              <select name="state" id="state">
+                <option value="" selected="selected">Select a State</option>
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="CA">California</option>
+                <option value="CO">Colorado</option>
+                <option value="CT">Connecticut</option>
+                <option value="DE">Delaware</option>
+                <option value="DC">District Of Columbia</option>
+                <option value="FL">Florida</option>
+                <option value="GA">Georgia</option>
+                <option value="HI">Hawaii</option>
+                <option value="ID">Idaho</option>
+                <option value="IL">Illinois</option>
+                <option value="IN">Indiana</option>
+                <option value="IA">Iowa</option>
+                <option value="KS">Kansas</option>
+                <option value="KY">Kentucky</option>
+                <option value="LA">Louisiana</option>
+                <option value="ME">Maine</option>
+                <option value="MD">Maryland</option>
+                <option value="MA">Massachusetts</option>
+                <option value="MI">Michigan</option>
+                <option value="MN">Minnesota</option>
+                <option value="MS">Mississippi</option>
+                <option value="MO">Missouri</option>
+                <option value="MT">Montana</option>
+                <option value="NE">Nebraska</option>
+                <option value="NV">Nevada</option>
+                <option value="NH">New Hampshire</option>
+                <option value="NJ">New Jersey</option>
+                <option value="NM">New Mexico</option>
+                <option value="NY">New York</option>
+                <option value="NC">North Carolina</option>
+                <option value="ND">North Dakota</option>
+                <option value="OH">Ohio</option>
+                <option value="OK">Oklahoma</option>
+                <option value="OR">Oregon</option>
+                <option value="PA">Pennsylvania</option>
+                <option value="RI">Rhode Island</option>
+                <option value="SC">South Carolina</option>
+                <option value="SD">South Dakota</option>
+                <option value="TN">Tennessee</option>
+                <option value="TX">Texas</option>
+                <option value="UT">Utah</option>
+                <option value="VT">Vermont</option>
+                <option value="VA">Virginia</option>
+                <option value="WA">Washington</option>
+                <option value="WV">West Virginia</option>
+                <option value="WI">Wisconsin</option>
+                <option value="WY">Wyoming</option>
+              </select>
+
+              <label for="zip">Zip Code</label>
+              <input type="text" name="zip" id="zip" />
+            </div>
+            <!--end column-->
+            <div class="double">
+              <label for="comments"
+                >Tell us about the types of kittens you want</label
+              >
+              <textarea
+                name="comments"
+                id="comments"
+                cols="50"
+                rows="8"
+              ></textarea>
+
+              <h2>Kitten Affordance Calculator</h2>
+              <label for="income">Your Weekly Income</label>
+              <input
+                type="range"
+                min="0"
+                max="1000"
+                value="100"
+                step="50"
+                name="income"
+                id="income"
+              />
+              <input
+                type="hidden"
+                name="num-of-kittens"
+                id="num-of-kittens"
+                value="num of kittens"
+              />
+
+              <p>
+                You make $<span id="incomecontainer">100</span> per week.
+                <span id="kittenaffordance">
+                  Congratulations, you can afford 2 kittens!</span
+                >
+              </p>
+
+              <input
+                type="submit"
+                name="submit"
+                value="Send me 2 kittens"
+                id="submit"
+              />
+
+              <p class="disclaimer">
+                <strong>DISCLAIMER:</strong> Kittens grow up to become cats. You
+                can always mince your cats and turn them into kitten food, and
+                then you can afford even more kittens! Here is a
+                <a href="recipe.html">cat to kitten food recipe</a>, but we
+                strongly discourage this behavior.
+              </p>
+            </div>
+          </form>
+        </div>
+        <!--end form container-->
+      </div>
+      <!--end form slider-->
+
+      <div class="flexslider">
+        <ul class="slides">
+          <li>
+            <div class="slide1">
+              <h2>Kittens are good for you!</h2>
+              <a href="#" class="cta"
+                ><span>These Kittens Available Now!</span></a
+              >
+            </div>
+          </li>
+          <li>
+            <div class="slide2">
+              <h2>Kittens will make you happy!</h2>
+              <a href="#" class="cta"><span>Love This Kitten Today!</span></a>
+            </div>
+          </li>
+          <li>
+            <div class="slide3">
+              <h2>Your life will never be boring if you have a kitten!</h2>
+              <a href="#" class="cta"
+                ><span>This Kitten is Available Now!</span></a
+              >
+            </div>
+          </li>
+          <li>
+            <div class="slide4">
+              <h2>So Cute!</h2>
+              <a href="#" class="cta light"
+                ><span>Awe, Look At That Face!</span></a
+              >
+            </div>
+          </li>
+          <li>
+            <div class="slide5">
+              <h2>Get a new kitten every week!</h2>
+              <a href="#" class="cta"
+                ><span>&ldquo;Please Take Us Home&rdquo;</span></a
+              >
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <main>
+        <article class="column">
+          <h1>Kittens are Fun!</h1>
+          <p>
+            Climb the curtains stretching lick consectetur, accumsan sleep in
+            the sink purr claw iaculis faucibus nunc. Et eat the grass leap
+            sleep in the sink, meow in viverra tempus tristique egestas
+            vulputate. Vel tortor chase the red dot ac sleep on your keyboard,
+            sunbathe purr nullam bibendum sollicitudin feed me.
+          </p>
+        </article>
+
+        <article class="column">
+          <h1>Kittens are Cute!</h1>
+          <p>
+            Tail flick biting egestas sleep in the sink zzz, vestibulum puking
+            zzz vehicula sunbathe. Litter box stretching non mauris a, nibh
+            egestas judging you sollicitudin eat the grass catnip iaculis. Bat
+            claw nibh cras nec, bibendum accumsan lay down in your way sleep on
+            your face leap scratched consectetur tortor.
+          </p>
+        </article>
+
+        <article class="column">
+          <h1>Kittens are Soft!</h1>
+          <p>
+            Litter box leap vel sniff consectetur cras nec, justo quis nunc
+            adipiscing sleep in the sink dolor. Non lay down in your way meow
+            nibh eat, bibendum vulputate enim lick fluffy fur. Leap suscipit
+            attack toss the mousie et, catnip chuf run sleep in the sink dolor
+            sagittis.
+          </p>
+        </article>
+      </main>
+
+      <section id="featured">
+        <h1>More Featured Kittens</h1>
+        <div id="grid">
+          <a href="images-medium/kitten01.jpg" class="fancybox" rel="gallery">
+            <img src="images-thumbnail/kitten01.jpg" alt="kitten!" />
+          </a>
+          <a href="images-medium/kitten02.jpg" class="fancybox" rel="gallery">
+            <img src="images-thumbnail/kitten02.jpg" alt="kitten!" />
+          </a>
+          <a href="images-medium/kitten03.jpg" class="fancybox" rel="gallery">
+            <img src="images-thumbnail/kitten03.jpg" alt="kitten!" />
+          </a>
+          <a href="images-medium/kitten04.jpg" class="fancybox" rel="gallery">
+            <img src="images-thumbnail/kitten04.jpg" alt="kitten!" />
+          </a>
+          <a href="images-medium/kitten05.jpg" class="fancybox" rel="gallery">
+            <img src="images-thumbnail/kitten05.jpg" alt="kitten!" />
+          </a>
+          <a href="images-medium/kitten06.jpg" class="fancybox" rel="gallery">
+            <img src="images-thumbnail/kitten06.jpg" alt="kitten!" />
+          </a>
+          <a href="images-medium/kitten07.jpg" class="fancybox" rel="gallery">
+            <img src="images-thumbnail/kitten07.jpg" alt="kitten!" />
+          </a>
+          <a href="images-medium/kitten08.jpg" class="fancybox" rel="gallery">
+            <img src="images-thumbnail/kitten08.jpg" alt="kitten!" />
+          </a>
+          <a href="images-medium/kitten09.jpg" class="fancybox" rel="gallery">
+            <img src="images-thumbnail/kitten09.jpg" alt="kitten!" />
+          </a>
+          <a href="images-medium/kitten10.jpg" class="fancybox" rel="gallery">
+            <img src="images-thumbnail/kitten10.jpg" alt="kitten!" />
+          </a>
+          <a href="images-medium/kitten11.jpg" class="fancybox" rel="gallery">
+            <img src="images-thumbnail/kitten11.jpg" alt="kitten!" />
+          </a>
+          <a href="images-medium/kitten12.jpg" class="fancybox" rel="gallery">
+            <img src="images-thumbnail/kitten12.jpg" alt="cutest kitten!" />
+          </a>
+        </div>
+      </section>
+
+      <footer>
+        <p>Sponsored by KITTENS ROCK &copy;2020</p>
+      </footer>
+    </div>
+
+    <!-- Load jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <!-- Load jQuery flexslider -->
+    <script src="jquery.flexslider-min.js"></script>
+
+    <!-- Load jQuery Validator... -->
+    <script src="http://cdn.jsdelivr.net/jquery.validation/1.13.1/jquery.validate.min.js"></script>
+
+    <!--Load jQuery Easing...-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!--Load jQuery Fancybox...-->
+    <script src="source/jquery.fancybox.js"></script>
+
+    <!-- My Script file -->
+    <script src="script.js"></script>
+  </body>
+</html>
