@@ -1,0 +1,154 @@
+/********** Bill's resets **********/
+
+h1,
+h2,
+h3,
+p,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+nav ul,
+nav ol {
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/************** End CSS RESET ****************/
+
+/************* Typography ************/
+h1 {
+  font-family: Oswald, sans-serif;
+  font-size: 24px;
+  margin-bottom: 1em;
+  text-transform: uppercase;
+}
+
+p {
+  line-height: 1.4em;
+  margin-bottom: 1em;
+}
+
+footer p {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+/**************** Media Queries ****************/
+
+@media only screen and (min-width: 600px) {
+  main {
+    display: flex;
+  }
+
+  .column {
+    flex: 1;
+  }
+
+  #grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  #page {
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  header h1 {
+    font-size: 120px;
+  }
+}
+
+body {
+  font-family: "Gentium Basic", serif;
+  color: #333;
+}
+
+header {
+  padding: 0 20px;
+  position: relative;
+}
+
+header h1 {
+  text-align: center;
+  font-size: 10vw;
+  margin-bottom: 0;
+  background: #e8e8e8;
+  padding: 50px 20px;
+}
+
+main {
+  margin-top: 60px;
+  padding: 0 10px;
+}
+
+section {
+  padding: 20px 10px;
+}
+
+.column {
+  padding: 0 10px;
+}
+
+footer {
+  margin: 0 20px;
+  padding: 40px;
+  background: #e8e8e8;
+}
+
+/******* Kitten Acquisition Form ********/
+#formtoggle {
+  background: #b40205;
+  font-family: Oswald, sans-serif;
+  font-size: 16px;
+  display: block;
+  padding: 10px 0;
+  line-height: 1.3em;
+  position: absolute;
+  right: 20px;
+  bottom: 0;
+  width: 280px;
+  text-align: center;
+  color: #e8e8e8;
+}
+
+/*********** Featured Kittens ***********/
+#featured {
+  background: #2e364a;
+  margin: 0 20px;
+}
+
+#grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+#featured h1 {
+  margin-left: 10px;
+  color: #ededed;
+  margin-bottom: 20px;
+}
+
+#featured a {
+  display: block;
+  padding: 10px;
+}
+
+#featured a img {
+  border: 4px solid #455784;
+}
