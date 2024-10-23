@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <title>Kittens for Sale!</title>
+    <!-- Fancybox CSS -->
+    <link href="source/jquery.fancybox.css" rel="stylesheet" />
+    <link rel="stylesheet" href="flexslider.css" />
     <link href="styles.css" rel="stylesheet" />
     <!-- Normalize CSS -->
     <link
@@ -25,9 +28,47 @@
         <a href="#" id="formtoggle">Open the Kitten Acquisition Form</a>
       </header>
 
-      <div>
-        <!--Slider goes here-->
-        <img src="slides/kitten01.jpg" alt="kitten" />
+      <div class="flexslider">
+        <ul class="slides">
+          <li>
+            <div class="slide1">
+              <h2>Kittens are good for you!</h2>
+              <a href="#" class="cta"
+                ><span>These Kittens Available Now!</span></a
+              >
+            </div>
+          </li>
+          <li>
+            <div class="slide2">
+              <h2>Kittens will make you happy!</h2>
+              <a href="#" class="cta"><span>Love This Kitten Today!</span></a>
+            </div>
+          </li>
+          <li>
+            <div class="slide3">
+              <h2>Your life will never be boring if you have a kitten!</h2>
+              <a href="#" class="cta"
+                ><span>This Kitten is Available Now!</span></a
+              >
+            </div>
+          </li>
+          <li>
+            <div class="slide4">
+              <h2>So Cute!</h2>
+              <a href="#" class="cta light"
+                ><span>Awe, Look At That Face!</span></a
+              >
+            </div>
+          </li>
+          <li>
+            <div class="slide5">
+              <h2>Get a new kitten every week!</h2>
+              <a href="#" class="cta"
+                ><span>&ldquo;Please Take Us Home&rdquo;</span></a
+              >
+            </div>
+          </li>
+        </ul>
       </div>
 
       <main>
@@ -68,40 +109,40 @@
       <section id="featured">
         <h1>More Featured Kittens</h1>
         <div id="grid">
-          <a href="images-medium/kitten01.jpg">
+          <a href="images-medium/kitten01.jpg" class="fancybox" rel="gallery">
             <img src="images-thumbnail/kitten01.jpg" alt="kitten!" />
           </a>
-          <a href="images-medium/kitten02.jpg">
+          <a href="images-medium/kitten02.jpg" class="fancybox" rel="gallery">
             <img src="images-thumbnail/kitten02.jpg" alt="kitten!" />
           </a>
-          <a href="images-medium/kitten03.jpg">
+          <a href="images-medium/kitten03.jpg" class="fancybox" rel="gallery">
             <img src="images-thumbnail/kitten03.jpg" alt="kitten!" />
           </a>
-          <a href="images-medium/kitten04.jpg">
+          <a href="images-medium/kitten04.jpg" class="fancybox" rel="gallery">
             <img src="images-thumbnail/kitten04.jpg" alt="kitten!" />
           </a>
-          <a href="images-medium/kitten05.jpg">
+          <a href="images-medium/kitten05.jpg" class="fancybox" rel="gallery">
             <img src="images-thumbnail/kitten05.jpg" alt="kitten!" />
           </a>
-          <a href="images-medium/kitten06.jpg">
+          <a href="images-medium/kitten06.jpg" class="fancybox" rel="gallery">
             <img src="images-thumbnail/kitten06.jpg" alt="kitten!" />
           </a>
-          <a href="images-medium/kitten07.jpg">
+          <a href="images-medium/kitten07.jpg" class="fancybox" rel="gallery">
             <img src="images-thumbnail/kitten07.jpg" alt="kitten!" />
           </a>
-          <a href="images-medium/kitten08.jpg">
+          <a href="images-medium/kitten08.jpg" class="fancybox" rel="gallery">
             <img src="images-thumbnail/kitten08.jpg" alt="kitten!" />
           </a>
-          <a href="images-medium/kitten09.jpg">
+          <a href="images-medium/kitten09.jpg" class="fancybox" rel="gallery">
             <img src="images-thumbnail/kitten09.jpg" alt="kitten!" />
           </a>
-          <a href="images-medium/kitten10.jpg">
+          <a href="images-medium/kitten10.jpg" class="fancybox" rel="gallery">
             <img src="images-thumbnail/kitten10.jpg" alt="kitten!" />
           </a>
-          <a href="images-medium/kitten11.jpg">
+          <a href="images-medium/kitten11.jpg" class="fancybox" rel="gallery">
             <img src="images-thumbnail/kitten11.jpg" alt="kitten!" />
           </a>
-          <a href="images-medium/kitten12.jpg">
+          <a href="images-medium/kitten12.jpg" class="fancybox" rel="gallery">
             <img src="images-thumbnail/kitten12.jpg" alt="cutest kitten!" />
           </a>
         </div>
@@ -111,6 +152,18 @@
         <p>Sponsored by KITTENS ROCK &copy;2020</p>
       </footer>
     </div>
+    <!--Load jQuery...-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <!--Load jQuery Flexbox...-->
+    <script src="jquery.flexslider-min.js"></script>
+
+    <!--Load jQuery Easing...-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!--Load jQuery Fancybox...-->
+    <script src="source/jquery.fancybox.js"></script>
+
     <!--My Script file-->
     <script src="script.js"></script>
   </body>
