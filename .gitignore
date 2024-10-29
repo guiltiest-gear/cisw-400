@@ -6,3 +6,4 @@ fonts
 *.m4a
 *.mp4
 *.gif
+.DS_Store
