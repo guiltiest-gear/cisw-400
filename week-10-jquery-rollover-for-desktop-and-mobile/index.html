@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Team</title>
+
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Teko:300,600"
+      rel="stylesheet"
+    />
+    <link href="css/styles.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body>
+    <section>
+      <ul id="team">
+        <li>
+          <span class="selected">
+            <img src="images/portrait01.jpg" alt="photo" />
+            <div class="info-bubble">
+              <div class="info-pointer"></div>
+              <div class="team-member-info">
+                <h1>Betty Jones</h1>
+                <p>
+                  I'm a snappy gurl who can help you with your project. Check
+                  out my social media pages to see what I can do.
+                </p>
+                <p class="social">
+                  <a href="http://linkedin.com"
+                    ><i class="fa fa-linkedin-square" aria-hidden="true"></i
+                  ></a>
+                  <a href="http://facebook.com"
+                    ><i class="fa fa-facebook-square" aria-hidden="true"></i
+                  ></a>
+                  <a href="http://twitter.com"
+                    ><i class="fa fa-twitter-square" aria-hidden="true"></i
+                  ></a>
+                </p>
+              </div>
+            </div>
+          </span>
+        </li>
+        <li>
+          <span class="selected">
+            <img src="images/portrait03.jpg" alt="photo" />
+            <div class="info-bubble">
+              <div class="info-pointer"></div>
+              <div class="team-member-info">
+                <h1>Joe Johnson</h1>
+                <p>
+                  I'm a cool dood who can help you with your project. Check out
+                  my social media pages to see what I can do.
+                </p>
+                <p class="social">
+                  <a href="http://linkedin.com"
+                    ><i class="fa fa-linkedin-square" aria-hidden="true"></i
+                  ></a>
+                  <a href="http://facebook.com"
+                    ><i class="fa fa-facebook-square" aria-hidden="true"></i
+                  ></a>
+                  <a href="http://twitter.com"
+                    ><i class="fa fa-twitter-square" aria-hidden="true"></i
+                  ></a>
+                </p>
+              </div>
+            </div>
+          </span>
+        </li>
+        <li>
+          <span class="selected">
+            <img src="images/portrait02.jpg" alt="photo" />
+            <div class="info-bubble">
+              <div class="info-pointer"></div>
+              <div class="team-member-info">
+                <h1>Martha Ziggenhopper</h1>
+                <p>
+                  I'm less snappy than the other girl, but can still help. Check
+                  out my social media pages to see what I can do.
+                </p>
+                <p class="social">
+                  <a href="http://linkedin.com"
+                    ><i class="fa fa-linkedin-square" aria-hidden="true"></i
+                  ></a>
+                  <a href="http://facebook.com"
+                    ><i class="fa fa-facebook-square" aria-hidden="true"></i
+                  ></a>
+                  <a href="http://twitter.com"
+                    ><i class="fa fa-twitter-square" aria-hidden="true"></i
+                  ></a>
+                </p>
+              </div>
+            </div>
+          </span>
+        </li>
+      </ul>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+      $(".selected").bind("touchstart mouseenter", function (event) {
+        if (event.type == "mouseenter") {
+          $(this).addClass("hover-selected");
+
+          $(this).on("mouseleave", function (e) {
+            $(this).removeClass("hover-selected");
+          });
+        } else {
+          // handles touched
+          if ($(this).hasClass("hover-selected")) {
+            var theSpan = $(this);
+            var theImage = $(this).find("img");
+
+            theImage.on("touchend", function () {
+              theSpan.removeClass("hover-selected");
+              theImage.off();
+            });
+          } else {
+            $(this).addClass("hover-selected");
+          }
+          $(".selected").not(this).removeClass("hover-selected");
+        }
+      });
+    </script>
+  </body>
+</html>
