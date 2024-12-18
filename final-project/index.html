@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reverse PIG</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      rel="stylesheet"
+    />
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>Reverse PIG</h1>
+    <p>
+      There are two players, and both start with 30 points. The player who's
+      turn it is makes a wager of points, ranging from 2 to 12, and rolls the
+      dice.
+    </p>
+    <p>
+      Depending on the value of the dice and your wager, the following will
+      occur according to these rules:
+    </p>
+    <ul>
+      <li>
+        If your wager is <i>less</i> than the roll, you lose the wagered points.
+      </li>
+      <li>
+        If your wager is <i>greater</i> than the roll, your opponent loses the
+        wagered points.
+      </li>
+      <li>
+        If your wager is <i>exactly</i> the value of the roll, you gain the
+        wagered points.
+      </li>
+    </ul>
+    <p>
+      Note: To keep a fair balance, if you roll exactly, your turn must be
+      passed to the next player.
+    </p>
+    <p>
+      There is a special case with snake eyes (being two ones), as your points
+      will be reset to 30.
+    </p>
+    <p>The first person to 0 points or lower loses.</p>
+
+    <div id="gamecontrol">
+      <h2>Start a Game</h2>
+      <button id="startgame">
+        Randomly Pick the First Player, and Start the Game
+      </button>
+    </div>
+
+    <div id="game"></div>
+    <div id="actions"></div>
+    <div id="score"></div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
+  </body>
+</html>
